@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@drawable/wave__8_">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="00:00.00"
+            android:textSize="45dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="95dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="100dp"
+            android:id="@+id/timer"
+            ></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="              Lap                      Total                  Lap time"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:id="@+id/laptitle"
+            android:visibility="invisible"
+            android:layout_marginTop="250dp"
+            ></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="300dp">
+
+
+            <ListView
+                android:id="@+id/lap"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="3dp"
+                ></ListView>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_marginTop="150dp"
+       android:layout_gravity="center_horizontal"
+       android:layout_marginBottom="50dp">
+
+       <ImageButton
+           android:id="@+id/reset"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:background="@drawable/roundbutton"
+           android:src="@drawable/outline_close_24"
+           android:scaleType="fitCenter"
+           android:padding="12dp"></ImageButton>
+
+       <ImageButton
+           android:id="@+id/play"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:background="@drawable/roundbutton"
+           android:padding="9dp"
+           android:scaleType="fitCenter"
+           android:layout_marginLeft="40dp"
+           android:layout_marginRight="40dp"
+           android:src="@drawable/play"></ImageButton>
+       <ImageButton
+           android:id="@+id/flag"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
+           android:src="@drawable/flag"
+           android:background="@drawable/roundbutton"
+           ></ImageButton>
+   </LinearLayout>
+
+
+
+</LinearLayout>
