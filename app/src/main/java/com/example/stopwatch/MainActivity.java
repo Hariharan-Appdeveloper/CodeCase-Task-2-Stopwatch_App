@@ -12,10 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     int i=0;
     int millsec;
 
-    int flagmillisec=0,flagmins,flagsecs, diffmillisec=0, diffmins=0,diffsecs=0;
+    int flagmillisec=0,flagmins,flagsecs, diffmillisec=0, diffmins=0,diffsecs=0,secs,mins;
 
 
 
@@ -72,11 +72,15 @@ public class MainActivity extends AppCompatActivity {
                     isresume=true;
                     running=true;
                     start.setImageDrawable(getResources().getDrawable(R.drawable.pause));
+                    flag.setVisibility(View.VISIBLE);
+                    reset.setVisibility(View.INVISIBLE);
                 }
                 else{
                     isresume=false;
                     running=false;
                     start.setImageDrawable(getResources().getDrawable(R.drawable.play));
+                    flag.setVisibility(View.INVISIBLE);
+                    reset.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -89,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                 start.setImageDrawable(getResources().getDrawable(R.drawable.play));
                 seconds=0;
 
+                flag.setVisibility(View.INVISIBLE);
+                reset.setVisibility(View.INVISIBLE);
                 timer.setText("00:00.00");
                 laparray.clear();
                 reverselist.clear();
@@ -104,21 +110,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                int mins=seconds/3600;
-                int secs=(seconds%3600)/60;
-                millsec=seconds%60;
-
+                secs=(seconds%3600)/60;
+                millsec=seconds%100;
+                mins=seconds/3600;
                 String time=String.format("%02d:%02d.%02d",mins,secs,millsec);
-                flagmillisec=millsec;
-                flagmins=mins;
-                flagsecs=secs;
 
                 if(running){
                     seconds++;
+                    flagmillisec=millsec;
+                    flagmins=mins;
+                    flagsecs=secs;
                 }
 
                 timer.setText(time);
-                h.postDelayed((Runnable) this,0);
+
+                h.postDelayed(this, 15);
+
             }
         });
 

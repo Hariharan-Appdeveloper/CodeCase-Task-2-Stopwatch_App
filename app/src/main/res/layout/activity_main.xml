@@ -69,10 +69,11 @@
            android:id="@+id/reset"
            android:layout_width="60dp"
            android:layout_height="60dp"
-           android:background="@drawable/roundbutton"
+           android:background="@drawable/roundblack"
            android:src="@drawable/outline_close_24"
            android:scaleType="fitCenter"
-           android:padding="12dp"></ImageButton>
+           android:padding="12dp"
+           android:visibility="invisible"></ImageButton>
 
        <ImageButton
            android:id="@+id/play"
@@ -89,7 +90,8 @@
            android:layout_width="60dp"
            android:layout_height="60dp"
            android:src="@drawable/flag"
-           android:background="@drawable/roundbutton"
+           android:background="@drawable/roundblack"
+           android:visibility="invisible"
            ></ImageButton>
    </LinearLayout>
 
